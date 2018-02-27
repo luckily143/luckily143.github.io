@@ -6,7 +6,16 @@ var password = document.getElementById('passw');
 var currentpassword = document.getElementById('currentpass');
 var btnLogin = document.getElementById('btnLogin');
 var btnSave = document.getElementById('btnSave');
+var btnfp = document.getElementById('fpbtn');
+var fpm = document.getElementById('fpm');
+document.getElementById("fpm").style.display = "none";
 
+
+
+btnfp.addEventListener('click',clickfp);
+function clickfp(){
+document.getElementById("fpm").style.display = "block";
+}
 
 var user = "vmpres";
 var passwords;
