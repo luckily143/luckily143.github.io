@@ -1,0 +1,104 @@
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBZ4yoo8sLVkK0bxTUNj1PBCSkUsobOxz0",
+    authDomain: "final-web-app.firebaseapp.com",
+    databaseURL: "https://final-web-app.firebaseio.com",
+    projectId: "final-web-app",
+    storageBucket: "final-web-app.appspot.com",
+    messagingSenderId: "254152892448"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<div class=col-md-12>
+
+<table class="table table-bordered col-md-4" id="append">
+<thead>
+  <tr>
+    <th>Last Name</th>
+    <th>Age</th>
+  <th>Edit</th>
+</tr>
+</thead>
+
+</table>
+
+<div class="col-md-12" style="display:none" id="EditContent">
+<div class="col-md-2">
+<input type="text" class="form-control"  id="lname">
+</div>
+<div class="col-md-2">
+<input type="text" class="form-control" id="age">
+</div>
+<div class="col-md-2">
+<input type="button" class="btn btn-primary" value="update" onclick="callUpdateFunction()">
+</div>
+</div>
+</div>
+
+<script>
+var ref=firebase.database().ref("patient");
+var key;
+
+var init=function(){
+ $('#append td').remove();
+ref.once('value',function(snapshot){
+	var data=snapshot.val();
+	var tr;
+	var dataArray=[];
+for (var key in data){
+               data[key].key=key;
+               dataArray.push(data[key]);
+            };
+
+for(var i=0;i<dataArray.length;i++){
+		tr=$('<tr/>');
+		tr.append("<td>"+dataArray[i].lname+"</td>");
+    tr.append("<td>"+dataArray[i].age+"</td>");
+  tr.append("<td>" + "<input type='button' class='btn btn-primary' value='Edit' onclick='callEditFunction()'/>" + "</td>");
+  tr.append("<td>"+dataArray[i].key+"</td>"); //appending the key to the table so we can edit the particular data.
+		$("#append").append(tr);
+	}
+  $('#append tr').find('td:eq(3)').hide(); //hiding the key so that the end user's will not see it.
+});
+}
+init();
+
+function callEditFunction(){
+$('#append tr').click(function () {
+
+            var lname = $(this).find('td:eq(0)').map(function () {
+                return $(this).text();
+            }).get().join(" ");
+              var age = $(this).find('td:eq(1)').map(function () {
+                return $(this).text();
+            }).get().join(" ");
+            key = $(this).find('td:eq(3)').map(function () {
+                return $(this).text();
+            }).get().join(" "); //getting the key for the particular tr and assigning to the global variable.
+            $("#lname").val(lname);
+            $("#age").val(age);
+            document.getElementById("EditContent").style.display="block";
+});
+}
+function callUpdateFunction(){
+debugger
+var lname,age;
+name=document.getElementById("lname").value;
+age=document.getElementById("age").value;
+var dataUpdate={};
+dataUpdate.lname=lname;
+dataUpdate.age=age;
+ref.child(key).set(dataUpdate).then(function(){
+init();
+document.getElementById("EditContent").style.display="none";
+})
+}
+</script>

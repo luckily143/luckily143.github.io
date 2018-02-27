@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 content">
+
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Thêm dữ liệu với ID tự nhập bằng tay</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                ID:
+                                <input type="text" id="txtId" />
+                                <br />
+                                User Name:
+                                <input type="text" id="txtUserName" />
+                                <br />
+                                Email:
+                                <input type="text" id="txtEmail" />
+                                <br />
+                                <button id="btnInsert" type="button">Insert Static ID</button>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Thêm dữ liệu với ID tự động</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                User Name:
+                                <input type="text" id="txtUserName1" />
+                                <br />
+                                Email:
+                                <input type="text" id="txtEmail1" />
+                                <br />
+                                <button id="btnInsertAuto" type="button">Insert Auto ID</button>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Đọc dữ liệu từ khóa chính</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                ID:
+                                <input type="text" id="txtId1" />
+                                <br />
+                                <button id="btnRead" type="button">Read One Row Data</button>
+                            </form>
+                            <br />
+                            <table class="table table-striped" border="1">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="categoryList"></tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Đọc tất cả dữ liệu từ database</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <button id="btnReadAll" type="button">Read All Data</button>
+                            </form>
+                            <br />
+                            <table class="table table-striped" border="1">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lstTable"></tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Sửa</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                ID:
+                                <input type="text" id="txtId2" />
+                                <br />
+                                User Name:
+                                <input type="text" id="txtUserName2" />
+                                <br />
+                                Email:
+                                <input type="text" id="txtEmail2" />
+                                <br />
+                                <button id="btnUpdate" type="button">Update Data</button>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Xóa</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                ID:
+                                <input type="text" id="txtId3" />
+                                <br />
+                                <button id="btnDelete" type="button">Delete</button>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+         </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBZ4yoo8sLVkK0bxTUNj1PBCSkUsobOxz0",
+        authDomain: "final-web-app.firebaseapp.com",
+        databaseURL: "https://final-web-app.firebaseio.com",
+        projectId: "final-web-app",
+        storageBucket: "final-web-app.appspot.com",
+        messagingSenderId: "254152892448"
+      };
+      firebase.initializeApp(config);
+
+        function insertData(userId, name, email) {
+            firebase.database().ref('users/' + userId).set({
+                username: name,
+                email: email
+            });
+        }
+
+        function insertAutoKey(name, email) {
+            // A post entry.
+            var postData = {
+                username: name,
+                email: email
+            };
+
+            // Get a key for a new Post.
+            var newPostKey = firebase.database().ref().child('users').push().key;
+            // Write the new post's data simultaneously in the posts list and the user's post list.
+            var updates = {};
+            updates['/users/' + newPostKey] = postData;
+            return firebase.database().ref().update(updates);
+        }
+
+        function readData(userId) {
+            firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+                if (snapshot.val() === null) {
+                    /* does not exist */
+                    alert('does not exist');
+                } else {
+                    var tr = '<tr>' +
+                                '<td>' + userId + '</td>' +
+                                '<td>' + snapshot.val().username + '</td>' +
+                                '<td>' + snapshot.val().email + '</td>' +
+                            '</tr>';
+                    $('#categoryList').append(tr);
+                }
+                console.log(snapshot.val());
+            });
+        }
+
+        function readAllData() {
+            var ref = firebase.database().ref().child("users");
+
+            ref.on("value", function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    // key will be "ada" the first time and "alan" the second time
+                    var key = childSnapshot.key;
+                    // childData will be the actual contents of the child
+                    var childData = childSnapshot.val();
+                    var tr = '<tr>' +
+                                '<td>' + key + '</td>' +
+                                '<td>' + childData.username + '</td>' +
+                                '<td>' + childData.email + '</td>' +
+                            '</tr>';
+                    $('#lstTable').append(tr);
+                    console.log(snapshot.val());
+                });
+            }, function (error) {
+                console.log("Error: " + error.code);
+            });
+        }
+
+        function updateData(userId, name, email) {
+            // A post entry.
+            var postData = {
+                username: name,
+                email: email,
+            };
+            var personRef = firebase.database().ref().child("users").child(userId);
+
+            personRef.once('value', function (snapshot) {
+
+                if (snapshot.val() === null) {
+                    /* does not exist */
+                    alert('does not exist');
+                } else {
+                    personRef.update(postData);
+                }
+
+            });
+        }
+
+
+
+        function deleteData(userId) {
+            var personRef = firebase.database().ref().child("users").child(userId);
+            personRef.once('value', function (snapshot) {
+
+                if (snapshot.val() === null) {
+                    /* does not exist */
+                    alert('does not exist');
+                } else {
+                    personRef.remove();
+                }
+
+            });
+        }
+        $('#btnInsert').on('click', function () {
+            var id = $('#txtId').val();
+            var userName = $('#txtUserName').val();
+            var email = $('#txtEmail').val();
+            document.getElementById("txtId").value = "";
+            document.getElementById("txtUserName").value = "";
+            document.getElementById("txtEmail").value = "";
+            insertData(id, userName, email);
+        });
+        $('#btnInsertAuto').on('click', function () {
+            var userName = $('#txtUserName1').val();
+            var email = $('#txtEmail1').val();
+            document.getElementById("txtUserName1").value = "";
+            document.getElementById("txtEmail1").value = "";
+            insertAutoKey(userName, email);
+        });
+        $('#btnRead').on('click', function () {
+            var id = $('#txtId1').val();
+            if (id == '') {
+                return;
+            }
+            readData(id);
+        });
+        $('#btnReadAll').on('click', function () {
+            readAllData();
+        });
+
+        $('#btnUpdate').on('click', function () {
+            var id = $('#txtId2').val();
+            var userName = $('#txtUserName2').val();
+            var email = $('#txtEmail2').val();
+            document.getElementById("txtId2").value = "";
+            document.getElementById("txtUserName2").value = "";
+            document.getElementById("txtEmail2").value = "";
+            updateData(id, userName, email);
+        });
+        $('#btnDelete').on('click', function () {
+            var id = $('#txtId3').val();
+            deleteData(id);
+        });
+    </script>
+
+
+</body>
+</html>

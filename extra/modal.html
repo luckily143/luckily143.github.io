@@ -1,0 +1,36 @@
+<div id="simpleModal" class="modal">
+	<div class="modal-content">
+		<span id="closeBtn" class="closeBtn">&times;</span>
+		<table class="editdelete">
+						<tr>
+							<th colspan="3">Patients Records</th>
+						</tr>
+					<tr>
+					<td>Case Number :<br><input id="ided" type="text" placeholder="Enter Case Number" name="ided"></td>
+					</tr>
+					<tr>
+					<td>Last Name :<br> <input id="lnameed" type="text" placeholder="Enter Last Name" name="lnameed"></td><td>Given Name :<br><input id="gnameed"type="text" placeholder="Enter Given Name" name="gnameed"></td><td>Middle Name :<br><input id="mnameed"type="text" placeholder="Enter Middle Name" name="mnameed"></td>
+					</tr>
+					<tr>
+					<td>Age :<br><input id="ageed" type="number" name="ageed" placeholder="Enter Your Age"></td><td> Gender :<br><input type="radio" name="gendered" id="gendered" value="male" checked> Male<input type="radio" id="gendered" name="gendered" value="female"> Female</td><td>Birthday: <input type="date" id="bdayed" name="bdayed"></td>
+					</tr>
+				<tr>
+				<td>Contact Number :<br><input id="contactnumbered" type="text" placeholder="Enter Contact Number" name="contactnumbered"></td><td>Address :<br> <input id="addressed" type="text" placeholder="Enter Address" name="addressed"></td>
+				</tr>
+
+						<tr>
+						<td>Father's Name :<br><input id="fathernameed"type="text" placeholder="Enter Father's Name" name="fathernameed"></td><td>Mother's Name :<br><input id="mothernameed"type="text" placeholder="Enter Mother's Name" name="mothernameed"></td>
+						</tr>
+						<tr>
+							<td>Date Registered: <input type="date" id="dred" name="dred"></td>
+					</tr>
+					<tr>
+
+					<td></td>
+					<td></td>
+					<td class="savebtn"><input id="savebtn" onclick="saveClick()"type="submit" name="savebtn" value="SAVE"><input class="deletebtn" id="deletebtn" onclick="deleteClick()"type="submit" name="deletebtn" value="DELETE"></td>
+
+					</tr>
+					</table>
+	</div>
+</div>

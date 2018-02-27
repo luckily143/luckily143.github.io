@@ -1,0 +1,6 @@
+E:\cacmonhoc\HCDH\HK3\HCB2\LTHD\thuyettrinh\FirebaseClient\FirebaseClient\bin\FirebaseClient.dll.config
+E:\cacmonhoc\HCDH\HK3\HCB2\LTHD\thuyettrinh\FirebaseClient\FirebaseClient\bin\FirebaseClient.dll
+E:\cacmonhoc\HCDH\HK3\HCB2\LTHD\thuyettrinh\FirebaseClient\FirebaseClient\bin\FirebaseClient.pdb
+E:\cacmonhoc\HCDH\HK3\HCB2\LTHD\thuyettrinh\FirebaseClient\FirebaseClient\obj\Debug\FirebaseClient.csprojResolveAssemblyReference.cache
+E:\cacmonhoc\HCDH\HK3\HCB2\LTHD\thuyettrinh\FirebaseClient\FirebaseClient\obj\Debug\FirebaseClient.dll
+E:\cacmonhoc\HCDH\HK3\HCB2\LTHD\thuyettrinh\FirebaseClient\FirebaseClient\obj\Debug\FirebaseClient.pdb

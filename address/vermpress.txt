@@ -1,0 +1,14 @@
+
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDkyUa5jjMjdFcQqUXCbgFfCfvGf3SFV3g",
+    authDomain: "vmpress-930ea.firebaseapp.com",
+    databaseURL: "https://vmpress-930ea.firebaseio.com",
+    projectId: "vmpress-930ea",
+    storageBucket: "vmpress-930ea.appspot.com",
+    messagingSenderId: "184472814584"
+  };
+  firebase.initializeApp(config);
+</script>

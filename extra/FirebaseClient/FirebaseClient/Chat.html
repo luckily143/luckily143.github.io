@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Chat</title>
+</head>
+<body ng-app="app">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+    <link href="assets/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 content">
+                <!--content-->
+                <div class="post">
+                    <div class="panel panel-default" ng-controller="chatCtrl">
+                        <div class="panel panel-heading">
+                            <h2><a href="">Firebase chatbox</a></h2>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chatBox" style="padding: 10px;">
+                                <!-- Đồng bộ từ array chatMessage sang HTML.
+                                    Hàm limit To để lấy 15 messages cuối cùng -->
+
+                                <div ng-repeat="chatMessage in chatMessages | limitTo:-15">
+                                    <span style="font-weight: bold">{{chatMessage.name}}</span>   : <span>{{chatMessage.message}}</span>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="panel-footer">
+                            <form>
+                                Name: {{name}} <br />
+                                <!-- Khi người dùng bấm enter, ta gọi hàm sendChat trong controller,
+                                thực hiện đồng bộ, hiển thị tin nhắn trên máy những người dùng khác -->
+
+                                Chat: <input type="text" ng-model="chatMes" />
+                                <button type="submit" ng-click="sendChat()">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var app = angular.module('app', ['firebase']); //Tạo 1 module của angular, inject module firebase vào
+        app.controller('chatCtrl', ['$scope', '$firebase', function ($scope, $firebase) {
+            var name = prompt("Enter your name: ", '');
+            var previousChat = '';
+            $scope.name = name; //Lấy tên của người dùng
+            $scope.chatMessage = "";//Tẩy trắng khung text
+            //Kết nối tới service của firebase, url ở đây là url app của bạn
+            var ref = new Firebase("https://demochat-36aea.firebaseio.com/");
+            var sync = $firebase(ref);
+            $scope.chatMessages = sync.$asArray();//Lấy toàn bộ dữ liệu trong database trên Firebase, biến nó thành 1 array các object trong javascript
+
+            $scope.sendChat = function () {
+                if ($scope.chatMes == previousChat || $scope.chatMes.length == 0) return;
+
+                var chatMessage = { name: name, message: $scope.chatMes };
+                $scope.chatMessages.$add(chatMessage); //Thêm 1 tin nhắn vào array
+                previousChat = $scope.chatMes;
+                $scope.chatMes = "";
+            }
+
+            $scope.clear = function () {
+                for (var i = 0; i < $scope.chatMessages.length; i++) {
+                    $scope.chatMessages.$remove($scope.chatMessages[i]);
+                }
+            }
+        }]);
+    </script>
+
+</body>
+</html>
