@@ -1,0 +1,465 @@
+<html>
+<head>
+
+      <Title>Home</Title>
+    <link rel="icon" type="jpg" href="15.png">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-green.min.css" />
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="HomePage.css">
+
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css"/>
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="PATHTOCSSHERE">
+</head>
+
+<body>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">VMPRES
+        <span class="page-title-span">|</span>
+        <span class="page-home-span">HOME</span>
+      </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="patientrecords.html">Patient's Records</a>
+      </nav>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+      <div class="row">
+<div class="column left" style="background-color:none;">
+  <div>
+    <div id="simpleModal" class="modal">
+      <div class="modal-content">
+        <span id="closeBtn" class="closeBtn">&times;</span>
+        <h1>Appointments</h1>
+        <table class="records" id="records">
+        <thead>
+        <tr>
+          <th>Priority Number</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Contact Number</th>
+        </tr>
+        </thead>
+        <tbody id="tbody" class="tbody" align-items="center">
+
+        </tbody>
+      </table>
+      <br></br>
+      <input class="mdl-textfield__input" type="text" id="prioritynumber" placeholder="Enter Priority Number">
+      <br></br>
+      <input class="mdl-textfield__input" type="text" id="lname" placeholder="Enter Last Name">
+      <br></br>
+      <input class="mdl-textfield__input" type="text" id="fname" placeholder="Enter First Name">
+      <br></br>
+      <input class="mdl-textfield__input" type="text" id="mname" placeholder="Enter Middle Name">
+      <br></br>
+      <input class="mdl-textfield__input" type="text" id="contactnumber" placeholder="Enter Contact Number">
+      <br></br>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="add">Add</button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="edit">Edit</button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="Delete">Delete</button>
+      <br></br>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="save">Save</button>
+
+      </div>
+    </div>
+
+    <div id="editmodal" class="modal">
+      <div class="modal-content">
+        <span id="editcloseBtn" class="closeBtn">&times;</span>
+
+      <input class="mdl-textfield__input" type="text" id="newcasenumber" placeholder="Enter Casenumber">
+      <br></br>
+
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="search">Search</button>
+
+      </div>
+    </div>
+    <div id="deletemodal" class="modal">
+      <div class="modal-content">
+        <span id="deletebtn" class="closeBtn">&times;</span>
+
+      <input class="mdl-textfield__input" type="text" id="deletecasenumber" placeholder="Enter Casenumber">
+      <br></br>
+
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="deletethis">Delete</button>
+
+      </div>
+    </div>
+        <div class="january" id ="january">
+        <div class="month">
+          <ul>
+            <li class="jannext" id="jannext">&#10095;</li>
+            <li>January<br>
+              <span style="font-size:18px">2018</span>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="weekdays">
+          <li>Su</li>
+          <li>Mo</li>
+          <li>Tu</li>
+          <li>We</li>
+          <li>Th</li>
+          <li>Fr</li>
+          <li>Sa</li>
+
+        </ul>
+
+        <ul class="days">
+          <li>31</li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan1">1</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan2">2</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan3">3</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan4">4</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan5">5</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan6">6</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan7">7</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan8">8</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan9">9</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan10">10</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan11">11</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan12">12</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan13">13</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan14">14</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan15">15</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan16">16</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan17">17</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan18">18</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan19">19</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan20">20</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan21">21</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan22">22</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan23">23</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan24">24</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan25">25</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan26">26</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan27">27</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan28">28</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan29">29</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan30">30</button></li>
+          <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="jan31">31</button></li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </div>
+      <div class="February" id ="February">
+      <div class="month">
+        <ul>
+          <li class="febprev" id="febprev">&#10094;</li>
+          <li class="febnext" id="febnext">&#10095;</li>
+
+          <li>February<br>
+            <span style="font-size:18px">2018</span>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="weekdays">
+        <li>Su</li>
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+
+      </ul>
+
+      <ul class="days">
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li>31</li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb1">1</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb2">2</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb3">3</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb4">4</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb5">5</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb6">6</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb7">7</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb8">8</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb9">9</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb10">10</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb11">11</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb12">12</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb13">13</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb14">14</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb15">15</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb16">16</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb17">17</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb18">18</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb19">19</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb20">20</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb21">21</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb22">22</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb23">23</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb24">24</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb25">25</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb26">26</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb27">27</button></li>
+        <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="feb28">28</button></li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+    <div class="March" id ="March">
+    <div class="month">
+      <ul>
+
+        <li class="marchprev" id="marchprev">&#10094;</li>
+        <li class="marchnext" id="marchnext">&#10095;</li>
+        <li>March<br>
+          <span style="font-size:18px">2018</span>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="weekdays">
+      <li>Su</li>
+      <li>Mo</li>
+      <li>Tu</li>
+      <li>We</li>
+      <li>Th</li>
+      <li>Fr</li>
+      <li>Sa</li>
+
+    </ul>
+
+    <ul class="days">
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+      <li>28</li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march1">1</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march2">2</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march3">3</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march4">4</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march5">5</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march6">6</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march7">7</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march8">8</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march9">9</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march10">10</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march11">11</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march12">12</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march13">13</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march14">14</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march15">15</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march16">16</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march17">17</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march18">18</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march19">19</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march20">20</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march21">21</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march22">22</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march23">23</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march24">24</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march25">25</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march26">26</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march27">27</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march28">28</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march29">29</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march30">30</button></li>
+      <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="march31">31</button></li>
+    </ul>
+  </div>
+  <div class="April" id ="April">
+  <div class="month">
+    <ul>
+      <li class="aprilprev" id="aprilprev">&#10094;</li>
+        <li class="aprilnext" id="aprilnext">&#10095;</li>
+
+      <li>April<br>
+        <span style="font-size:18px">2018</span>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="weekdays">
+    <li>Su</li>
+    <li>Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+
+  </ul>
+
+  <ul class="days">
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april1">1</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april2">2</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april3">3</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april4">4</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april5">5</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april6">6</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april7">7</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april8">8</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april9">9</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april10">10</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april11">11</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april12">12</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april13">13</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april14">14</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april15">15</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april16">16</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april17">17</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april18">18</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april19">19</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april20">20</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april21">21</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april22">22</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april23">23</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april24">24</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april25">25</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april26">26</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april27">27</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april28">28</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april29">29</button></li>
+    <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="april30">30</button></li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+</div>
+<div class="May" id ="May">
+<div class="month">
+  <ul>
+    <li class="mayprev" id="mayprev">&#10094;</li>
+    <li class="maynext" id="maynext">&#10095;</li>
+    <li>May<br>
+      <span style="font-size:18px">2018</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Su</li>
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+
+</ul>
+
+<ul class="days">
+  <li>29</li>
+  <li>30</li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may1">1</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may2">2</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may3">3</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may4">4</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may5">5</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may6">6</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may7">7</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may8">8</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may9">9</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may10">10</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may11">11</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may12">12</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may13">13</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may14">14</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may15">15</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may16">16</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may17">17</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may18">18</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may19">19</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may20">20</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may21">21</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may22">22</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may23">23</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may24">24</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may25">25</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may26">26</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may27">27</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may28">28</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may29">29</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may30">30</button></li>
+  <li><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="may31">31</button></li>
+  <li>1</li>
+  <li>2</li>
+</ul>
+</div>
+  </div>
+
+</div>
+<div class="column right" style="background-color:#99ff99;">
+  <h3>Today's Appointments</h3>
+  <h1 id="today"></h1>
+
+  <table class="todayappointments" id="todayappointments">
+  <thead>
+  <tr>
+    <th>Priority Number</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Contact Number</th>
+  </tr>
+  </thead>
+  <tbody id="TodayTable" align-items="center">
+
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDkyUa5jjMjdFcQqUXCbgFfCfvGf3SFV3g",
+    authDomain: "vmpress-930ea.firebaseapp.com",
+    databaseURL: "https://vmpress-930ea.firebaseio.com",
+    projectId: "vmpress-930ea",
+    storageBucket: "vmpress-930ea.appspot.com",
+    messagingSenderId: "184472814584"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="HomePage.js"></script>
+
+</body>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #none;
+}
+</style>
+</html>
