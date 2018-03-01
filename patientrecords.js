@@ -385,12 +385,10 @@ var diff = Math.abs((d1-d2) / 31536000000 );  // difference in milliseconds
 
 var intvalue = Math.floor(diff);
 document.getElementById("age").value = intvalue;
-var agetext = age.value;
-var bases = firebase.database().ref();
-var newbase = bases.child("patient");
-var firebaseRef = newbase.child(idtext);
 
-  firebaseRef.child("age").set(agetext);
+var agetext = age.value;
+
+
 
 var bases = firebase.database().ref();
 var newbase = bases.child("patient");
