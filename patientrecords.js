@@ -398,6 +398,20 @@ var firebaseRef = newbase.child(idtext);
   firebaseRef.child("temperature").set(temperaturetext);
   firebaseRef.child("dr").set(drtext);
 
+  var d1 = new Date(); //"now"
+  var d2 = new Date(bdaytext)  // some date
+  var diff = Math.abs((d1-d2) / 31536000000 );  // difference in milliseconds
+
+  var intvalue = Math.floor(diff);
+  document.getElementById("age").value = intvalue;
+
+  var bases = firebase.database().ref();
+  var newbase = bases.child("patient");
+  var firebaseRef = newbase.child(idtext);
+
+    firebaseRef.child("age").set(agetext);
+
+    
 clearClick();
 
 alert("Successfully Edited Records");
