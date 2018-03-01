@@ -2802,7 +2802,7 @@ function openjan1(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "1");
+  localStorage.setItem("day", "01");
 
   window.location = "Appointment.html"
 }
@@ -2811,7 +2811,7 @@ function openjan2(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "2");
+  localStorage.setItem("day", "02");
 
   window.location = "Appointment.html"
 }
@@ -2820,7 +2820,7 @@ function openjan3(){
   localStorage.setItem("tod", "Wed");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "3");
+  localStorage.setItem("day", "03");
 
   window.location = "Appointment.html"
 }
@@ -2829,7 +2829,7 @@ function openjan4(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "4");
+  localStorage.setItem("day", "04");
 
   window.location = "Appointment.html"
 }
@@ -2838,7 +2838,7 @@ function openjan5(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "5");
+  localStorage.setItem("day", "05");
 
   window.location = "Appointment.html"
 }
@@ -2847,7 +2847,7 @@ function openjan6(){
   localStorage.setItem("tod", "Sat");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "6");
+  localStorage.setItem("day", "06");
 
   window.location = "Appointment.html"
 }
@@ -2856,7 +2856,7 @@ function openjan7(){
   localStorage.setItem("tod", "Sun");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "7");
+  localStorage.setItem("day", "07");
 
   window.location = "Appointment.html"
 }
@@ -2865,7 +2865,7 @@ function openjan8(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "8");
+  localStorage.setItem("day", "08");
 
   window.location = "Appointment.html"
 }
@@ -2874,7 +2874,7 @@ function openjan9(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "1");
-  localStorage.setItem("day", "9");
+  localStorage.setItem("day", "09");
 
   window.location = "Appointment.html"
 }
@@ -3116,7 +3116,7 @@ function openfeb1(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "1");
+  localStorage.setItem("day", "01");
 
   window.location = "Appointment.html"
 }
@@ -3125,7 +3125,7 @@ function openfeb2(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "2");
+  localStorage.setItem("day", "02");
 
   window.location = "Appointment.html"
 }
@@ -3134,7 +3134,7 @@ function openfeb3(){
   localStorage.setItem("tod", "Sat");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "3");
+  localStorage.setItem("day", "03");
 
   window.location = "Appointment.html"
 }
@@ -3143,7 +3143,7 @@ function openfeb4(){
   localStorage.setItem("tod", "Sun");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "4");
+  localStorage.setItem("day", "04");
 
   window.location = "Appointment.html"
 }
@@ -3152,7 +3152,7 @@ function openfeb5(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "5");
+  localStorage.setItem("day", "05");
 
   window.location = "Appointment.html"
 }
@@ -3161,7 +3161,7 @@ function openfeb6(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "6");
+  localStorage.setItem("day", "06");
 
   window.location = "Appointment.html"
 }
@@ -3170,7 +3170,7 @@ function openfeb7(){
   localStorage.setItem("tod", "Wed");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "7");
+  localStorage.setItem("day", "07");
 
   window.location = "Appointment.html"
 }
@@ -3179,7 +3179,7 @@ function openfeb8(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "8");
+  localStorage.setItem("day", "08");
 
   window.location = "Appointment.html"
 }
@@ -3188,7 +3188,7 @@ function openfeb9(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "2");
-  localStorage.setItem("day", "9");
+  localStorage.setItem("day", "09");
 
   window.location = "Appointment.html"
 }
@@ -3406,7 +3406,7 @@ function openmarch1(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "1");
+  localStorage.setItem("day", "01");
 
   window.location = "Appointment.html"
 }
@@ -3415,7 +3415,7 @@ function openmarch2(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "2");
+  localStorage.setItem("day", "02");
 
   window.location = "Appointment.html"
 }
@@ -3424,7 +3424,7 @@ function openmarch3(){
   localStorage.setItem("tod", "Sat");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "3");
+  localStorage.setItem("day", "03");
 
   window.location = "Appointment.html"
 }
@@ -3433,7 +3433,7 @@ function openmarch4(){
   localStorage.setItem("tod", "Sun");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "4");
+  localStorage.setItem("day", "04");
 
   window.location = "Appointment.html"
 }
@@ -3442,7 +3442,7 @@ function openmarch5(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "5");
+  localStorage.setItem("day", "05");
 
   window.location = "Appointment.html"
 }
@@ -3451,7 +3451,7 @@ function openmarch6(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "6");
+  localStorage.setItem("day", "06");
 
   window.location = "Appointment.html"
 }
@@ -3460,7 +3460,7 @@ function openmarch7(){
   localStorage.setItem("tod", "Wed");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "7");
+  localStorage.setItem("day", "07");
 
   window.location = "Appointment.html"
 }
@@ -3469,7 +3469,7 @@ function openmarch8(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "8");
+  localStorage.setItem("day", "08");
 
   window.location = "Appointment.html"
 }
@@ -3478,7 +3478,7 @@ function openmarch9(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "3");
-  localStorage.setItem("day", "9");
+  localStorage.setItem("day", "09");
 
   window.location = "Appointment.html"
 }
@@ -3716,7 +3716,7 @@ function openapril1(){
   localStorage.setItem("tod", "Sun");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "1");
+  localStorage.setItem("day", "01");
 
   window.location = "Appointment.html"
 }
@@ -3725,7 +3725,7 @@ function openapril2(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "2");
+  localStorage.setItem("day", "02");
 
   window.location = "Appointment.html"
 }
@@ -3734,7 +3734,7 @@ function openapril3(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "3");
+  localStorage.setItem("day", "03");
 
   window.location = "Appointment.html"
 }
@@ -3743,7 +3743,7 @@ function openapril4(){
   localStorage.setItem("tod", "Wed");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "4");
+  localStorage.setItem("day", "04");
 
   window.location = "Appointment.html"
 }
@@ -3752,7 +3752,7 @@ function openapril5(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "5");
+  localStorage.setItem("day", "05");
 
   window.location = "Appointment.html"
 }
@@ -3761,7 +3761,7 @@ function openapril6(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "6");
+  localStorage.setItem("day", "06");
 
   window.location = "Appointment.html"
 }
@@ -3770,7 +3770,7 @@ function openapril7(){
   localStorage.setItem("tod", "Sat");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "7");
+  localStorage.setItem("day", "07");
 
   window.location = "Appointment.html"
 }
@@ -3779,7 +3779,7 @@ function openapril8(){
   localStorage.setItem("tod", "Sun");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "8");
+  localStorage.setItem("day", "08");
 
   window.location = "Appointment.html"
 }
@@ -3788,7 +3788,7 @@ function openapril9(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "4");
-  localStorage.setItem("day", "9");
+  localStorage.setItem("day", "09");
 
   window.location = "Appointment.html"
 }
@@ -4019,7 +4019,7 @@ function openmay1(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "1");
+  localStorage.setItem("day", "01");
 
   window.location = "Appointment.html"
 }
@@ -4028,7 +4028,7 @@ function openmay2(){
   localStorage.setItem("tod", "Wed");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "2");
+  localStorage.setItem("day", "02");
 
   window.location = "Appointment.html"
 }
@@ -4037,7 +4037,7 @@ function openmay3(){
   localStorage.setItem("tod", "Thu");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "3");
+  localStorage.setItem("day", "03");
 
   window.location = "Appointment.html"
 }
@@ -4046,7 +4046,7 @@ function openmay4(){
   localStorage.setItem("tod", "Fri");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "4");
+  localStorage.setItem("day", "04");
 
   window.location = "Appointment.html"
 }
@@ -4055,7 +4055,7 @@ function openmay5(){
   localStorage.setItem("tod", "Sat");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "5");
+  localStorage.setItem("day", "05");
 
   window.location = "Appointment.html"
 }
@@ -4064,7 +4064,7 @@ function openmay6(){
   localStorage.setItem("tod", "Sun");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "6");
+  localStorage.setItem("day", "06");
 
   window.location = "Appointment.html"
 }
@@ -4073,7 +4073,7 @@ function openmay7(){
   localStorage.setItem("tod", "Mon");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "7");
+  localStorage.setItem("day", "07");
 
   window.location = "Appointment.html"
 }
@@ -4082,7 +4082,7 @@ function openmay8(){
   localStorage.setItem("tod", "Tue");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "8");
+  localStorage.setItem("day", "08");
 
   window.location = "Appointment.html"
 }
@@ -4091,7 +4091,7 @@ function openmay9(){
   localStorage.setItem("tod", "Wed");
   localStorage.setItem("yr", "2018");
   localStorage.setItem("month", "5");
-  localStorage.setItem("day", "9");
+  localStorage.setItem("day", "09");
 
   window.location = "Appointment.html"
 }
