@@ -331,7 +331,7 @@ function searcfunction(){
 
     var intvalue = Math.floor(diff);
     document.getElementById("age").value = intvalue;
-
+    var agetext = age.value;
     var bases = firebase.database().ref();
     var newbase = bases.child("patient");
     var firebaseRef = newbase.child(idtext);
@@ -367,7 +367,7 @@ var idtext = id.value;
 var lnametext = lname.value;
 var fnametext = fname.value;
 var mnametext = mname.value;
-var agetext = age.value;
+
 var gendertext = gender.value;
 var contactnumbertext = contactnumber.value;
 var bdaytext = bday.value;
@@ -385,7 +385,7 @@ var diff = Math.abs((d1-d2) / 31536000000 );  // difference in milliseconds
 
 var intvalue = Math.floor(diff);
 document.getElementById("age").value = intvalue;
-
+var agetext = age.value;
 var bases = firebase.database().ref();
 var newbase = bases.child("patient");
 var firebaseRef = newbase.child(idtext);
