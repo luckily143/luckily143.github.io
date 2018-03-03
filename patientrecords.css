@@ -10,9 +10,6 @@ width: 100px;
 .records tr:not(:first-child):hover{ background-color: #ffffff; }
 
 
-#linktocam{
-  display: none;
-}
 #overriding{
   display: none;
   cursor: pointer;transition: all .25s ease-in-out;

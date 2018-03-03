@@ -30,7 +30,9 @@ addbtn = document.getElementById("addbtn").disabled = false;
 
 document.getElementById("linktocam").disabled = true;
 function linktocam(){
-window.location = "CaptureImage.html"
+  var x = id.value;
+  localStorage.setItem("idtext", x);
+window.location = "Upload.html"
 }
 
 
@@ -38,8 +40,15 @@ var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1;
 var yyyy = today.getFullYear();
-
-
+var todays;
+var months;
+if(dd<9){
+  todays = "0" + dd;
+}
+if(mm<9){
+  months = "0" + mm;
+}
+document.getElementById("bday").max = yyyy+"-"+months+"-"+todays;
 document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
 
 
