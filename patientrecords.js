@@ -20,24 +20,24 @@ var output = document.getElementById('output');
 var weight = document.getElementById("weight");
 var heightcm = document.getElementById("heightcm");
 var temperature = document.getElementById("temperature");
+var overriding = document.getElementById("overriding");
 document.getElementById("age").disabled = true;
 document.getElementById("dr").disabled = true;
 editbtn = document.getElementById("editingbtn").disabled = true;
 deletebtn = document.getElementById("deletingbtn").disabled = true;
 addbtn = document.getElementById("addbtn").disabled = false;
+
+
 document.getElementById("linktocam").disabled = true;
 function linktocam(){
 window.location = "CaptureImage.html"
 }
 
 
-
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1;
 var yyyy = today.getFullYear();
-
-
 
 
 document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
@@ -193,6 +193,8 @@ function submitClick(){
   var temperaturetext = temperature.value;
   var drtext = dr.value;
 
+
+
   var d1 = new Date(); //"now"
   var d2 = new Date(bdaytext)  // some date
   var diff = Math.abs((d1-d2) / 31536000000 );  // difference in milliseconds
@@ -202,29 +204,20 @@ function submitClick(){
 
 
   var agetext = age.value;
-
+  var x;
   var a = firebase.database().ref();
   var b = a.child("patient");
   var c = b.child(idtext);
   c.on("value",snap =>{
-    if(snap.child("casenumber").val() != null){
-      alert("Patient Already Exist");
-      document.getElementById("id").value="";
-    document.getElementById("lname").value="";
-    document.getElementById("fname").value="";
-    document.getElementById("mname").value="";
-    document.getElementById("age").value="";
-     document.getElementById("gender").value="";
-     document.getElementById("contactnumber").value="";
-    document.getElementById("bday").value="";
-    document.getElementById("address").value="";
-    document.getElementById("fathername").value="";
-    document.getElementById("mothername").value="";
-    document.getElementById("heightcm").value="";
-    document.getElementById("weight").value="";
-    document.getElementById("temperature").value="";
-    document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
+    x = snap.child("casenumber").val();
+    if(x == null){
+      overriding.value = 0;
     }else{
+      overriding.value = x;
+    }
+    });
+    var overridingtext = overriding.value;
+    if(overridingtext == 0){
       var bases = firebase.database().ref();
       var newbase = bases.child("patient");
       var firebaseRef = newbase.child(idtext);
@@ -265,12 +258,24 @@ function submitClick(){
     location.reload();
 
     alert("Successfully Added");
+  }else{
+      document.getElementById("id").value="";
+    document.getElementById("lname").value="";
+    document.getElementById("fname").value="";
+    document.getElementById("mname").value="";
+    document.getElementById("age").value="";
+     document.getElementById("gender").value="";
+     document.getElementById("contactnumber").value="";
+    document.getElementById("bday").value="";
+    document.getElementById("address").value="";
+    document.getElementById("fathername").value="";
+    document.getElementById("mothername").value="";
+    document.getElementById("heightcm").value="";
+    document.getElementById("weight").value="";
+    document.getElementById("temperature").value="";
+    document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
+          alert("Patient Already Exist");
     }
-      });
-
-
-
-
 
 }
 

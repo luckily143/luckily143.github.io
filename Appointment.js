@@ -8,6 +8,8 @@ var searchbtn = document.getElementById('searchbtn');
 var submitbtn = document.getElementById("addbtn");
 var editbtn = document.getElementById("editingbtn");
 var deletebtn = document.getElementById("deletingbtn");
+var overriding = document.getElementById("overriding");
+
 
 editbtn = document.getElementById("editingbtn").disabled = true;
 deletebtn = document.getElementById("deletingbtn").disabled = true;
@@ -158,13 +160,28 @@ function submitClick(){
   var mnametext = mname.value;
   var contactnumbertext = contactnumber.value;
 
+  var x;
   var a = firebase.database().ref();
   var n = a.child("appointment");
   var b = n.child(month);
   var c = b.child(day);
-  var d = c.child(prioritynumbertext);
-  d.on("value",snap =>{
-    if(snap.val() != null){
+  c.on("value",snap =>{
+    x = snap.child(prioritynumbertext).val();
+    if(x == null){
+      overriding.value = 0;
+    }else{
+      overriding.value = x;
+    }
+    });
+
+    var overridingtext = overriding.value;
+    if(overridingtext != 0){
+      document.getElementById("prioritynumber").value="";
+      document.getElementById("lname").value="";
+      document.getElementById("gname").value="";
+      document.getElementById("mname").value="";
+       document.getElementById("contactnumber").value="";
+      alert("Priority Number Already Existed");
     }else{
 
           var bb = firebase.database().ref();
@@ -203,7 +220,7 @@ function submitClick(){
 
     alert("Successfully Added");
     }
-});
+
 
 
 

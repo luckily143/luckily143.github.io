@@ -60,7 +60,7 @@ tr:nth-child(even) {
 
 <div class="row">
   <div class="column">
-
+		<input id="overriding" type="text" placeholder="Hidden" name="overriding">
 
 		<table class="add">
 						<tr>
@@ -73,7 +73,7 @@ tr:nth-child(even) {
 					<td>Last Name :<br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname"></td><td>First Name :<br><input id="fname"type="text" placeholder="Enter First Name" name="fname"></td><td>Middle Name :<br><input id="mname"type="text" placeholder="Enter Middle Name" name="mname"></td>
 					</tr>
 					<tr>
-					<td>Birthday: <input type="date" id="bday" name="bday"></td><td> Gender :<br><input type="radio" name="gender" id="gender" value="male" checked> Male<input type="radio" id="gender" name="gender" value="female"> Female</td><td>Age :<br><input id="age" type="number"  name="age" placeholder="Age Auto Computed"></td>
+					<td>Birthday: <input type="date" id="bday" name="bday" min="1980-01-01" max="2000-01-01"></td><td> Gender :<br><input type="radio" name="gender" id="gender" value="male" checked> Male<input type="radio" id="gender" name="gender" value="female"> Female</td><td>Age :<br><input id="age" type="number"  name="age" placeholder="Age Auto Computed"></td>
 					</tr>
 				<tr>
 				<td>Contact Number :<br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber"></td><td>Address :<br> <input id="address" type="text" placeholder="Enter Address" name="address"></td>

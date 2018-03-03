@@ -9,3 +9,8 @@ table tr:not(:first-child){
 }
 .selected{ background-color: #ace; }
 .records tr:not(:first-child):hover{ background-color: #ace; }
+
+#overriding{
+  display: none;
+  cursor: pointer;transition: all .25s ease-in-out;
+}
