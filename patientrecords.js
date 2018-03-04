@@ -525,10 +525,6 @@ location.reload();
 
 //clearing alll textfields
 function clearClick(){
-  document.getElementById("imgbtn").style.display = "none";
-  document.getElementById("imageupload").style.display = "none";
-  document.getElementById("viewimg").style.display = "none";
-  document.getElementById("editimage").style.display = "none";
   document.getElementById("id").value="";
   document.getElementById("lname").value="";
   document.getElementById("fname").value="";
@@ -548,5 +544,6 @@ document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
   editbtn = document.getElementById("editingbtn").disabled = true;
   deletebtn = document.getElementById("deletingbtn").disabled = true;
   addbtn = document.getElementById("addbtn").disabled = false;
+  location.reload();
 
 }
