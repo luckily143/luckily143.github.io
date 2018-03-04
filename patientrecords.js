@@ -379,6 +379,7 @@ function searcfunction(){
       if(x == null){
         document.getElementById("imageupload").style.display = "block";
       }else{
+        document.getElementById("imageupload").style.display = "none";
         document.getElementById("viewimg").style.display = "block";
         document.getElementById("editimage").style.display = "block";
       }
