@@ -47,6 +47,7 @@ var id = localStorage.idtext;
       var newbase = bases.child("patient");
       var firebaseRef = newbase.child(id);
         firebaseRef.child("imageUrl").set(downloadURL);
+        firebaseRef.child("imagename").set(filename);
     });
 
       }
