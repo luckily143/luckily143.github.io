@@ -545,6 +545,9 @@ document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
   editbtn = document.getElementById("editingbtn").disabled = true;
   deletebtn = document.getElementById("deletingbtn").disabled = true;
   addbtn = document.getElementById("addbtn").disabled = false;
-  location.reload();
 
+  document.getElementById("imageupload").style.display = "none";
+  document.getElementById("imgbtn").style.display = "none";
+  document.getElementById("viewimg").style.display = "none";
+  document.getElementById("editimage").style.display = "none";
 }
