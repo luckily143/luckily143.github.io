@@ -14,3 +14,38 @@ width: 100px;
   display: none;
   cursor: pointer;transition: all .25s ease-in-out;
 }
+
+#imageupload{
+  width: 105px;
+  height: 37px;
+  text-align: left;
+  background-color: #8b9dc3;
+  align-items: center;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+.chosenfile{
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  z-index: -2;
+}
+#imgbtn{
+  align-items: center;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+#viewimg{
+  align-items: center;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+#editimage{
+  align-items: center;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}

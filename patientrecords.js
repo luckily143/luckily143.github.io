@@ -1,3 +1,4 @@
+
 //variable declaration
 var id = document.getElementById("id");
 var lname = document.getElementById("lname");
@@ -26,14 +27,83 @@ document.getElementById("dr").disabled = true;
 editbtn = document.getElementById("editingbtn").disabled = true;
 deletebtn = document.getElementById("deletingbtn").disabled = true;
 addbtn = document.getElementById("addbtn").disabled = false;
+var x;
 
 
-document.getElementById("linktocam").disabled = true;
-function linktocam(){
-  var x = id.value;
-  localStorage.setItem("idtext", x);
-window.location = "Upload.html"
+var selectedfile = "";
+var imgbtn = document.getElementById("imgbtn");
+var browse = document.getElementById('imageupload');
+document.getElementById("imgbtn").style.display = "none";
+document.getElementById("imageupload").style.display = "none";
+document.getElementById("viewimg").style.display = "none";
+document.getElementById("editimage").style.display = "none";
+
+
+function browseClick(){
+document.getElementById("imgbtn").style.display = "block";
+document.getElementById("imageupload").style.display = "none";
+
+selectedfile = event.target.files[0];
+
 }
+
+///imagecodes
+  function uploadfile(){
+  document.getElementById("imageupload").style.display = "none";
+  document.getElementById("imgbtn").style.display = "block";
+
+    var idtext = id.value;
+  var filename = selectedfile.name;
+
+  var bases = firebase.storage().ref("/image/" + filename);
+  var uploadTask = bases.put(selectedfile);
+
+      // Register three observers:
+    // 1. 'state_changed' observer, called any time the state changes
+    // 2. Error observer, called on failure
+    // 3. Completion observer, called on successful completion
+    uploadTask.on('state_changed', function(snapshot){
+      // Observe state change events such as progress, pause, and resume
+      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log('Upload is ' + progress + '% done');
+      switch (snapshot.state) {
+        case firebase.storage.TaskState.PAUSED: // or 'paused'
+          console.log('Upload is paused');
+          break;
+        case firebase.storage.TaskState.RUNNING: // or 'running'
+          console.log('Upload is running');
+          break;
+      }
+    }, function(error) {
+      // Handle unsuccessful uploads
+    }, function() {
+      // Handle successful uploads on complete
+      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+      var downloadURL = uploadTask.snapshot.downloadURL;
+      var bases = firebase.database().ref();
+      var newbase = bases.child("patient");
+      var firebaseRef = newbase.child(idtext);
+        firebaseRef.child("imageUrl").set(downloadURL);
+        firebaseRef.child("imagename").set(filename);
+        document.getElementById("imgbtn").style.display = "none";
+        document.getElementById("imageupload").style.display = "none";
+        location.reload();
+    });
+
+  }
+
+      function viewimage() {
+        window.location.assign(x);
+      }
+      function editimage() {
+          document.getElementById("imageupload").style.display = "block";
+          document.getElementById("imgbtn").style.display = "none";
+          document.getElementById("viewimg").style.display = "none";
+          document.getElementById("editimage").style.display = "none";
+      }
+
+
 
 
 var today = new Date();
@@ -122,12 +192,16 @@ rootRef.on("child_added",snap =>{
 
         table.rows[i].onclick = function()
         {
-          ditbtn = document.getElementById("editingbtn").disabled = false;
-          deletebtn = document.getElementById("deletingbtn").disabled = false;
-          addbtn = document.getElementById("addbtn").disabled = true;
-          document.getElementById("linktocam").disabled = false;
+
+
+            ditbtn = document.getElementById("editingbtn").disabled = false;
+            deletebtn = document.getElementById("deletingbtn").disabled = false;
+            addbtn = document.getElementById("addbtn").disabled = true;
             rIndex = this.rowIndex;
-         document.getElementById("searchcasenumber").value = this.cells[0].innerHTML;
+            document.getElementById("searchcasenumber").value = this.cells[0].innerHTML;
+
+
+
              searcfunction();
 
 
@@ -213,7 +287,7 @@ function submitClick(){
 
 
   var agetext = age.value;
-  var x;
+
   var a = firebase.database().ref();
   var b = a.child("patient");
   var c = b.child(idtext);
@@ -247,6 +321,8 @@ function submitClick(){
         firebaseRef.child("temperature").set(temperaturetext);
         firebaseRef.child("dr").set(drtext);
         firebaseRef.child("note").set("");
+        firebaseRef.child("imageUrl").set("");
+        firebaseRef.child("imagename").set("");
     //clearing textfields
 
       document.getElementById("id").value="";
@@ -293,8 +369,20 @@ function submitClick(){
 searchbtn.addEventListener('click', searcfunction);
 function searcfunction(){
 
-
     var searchcasenumbertext = searchcasenumber.value;
+
+    var a = firebase.database().ref();
+    var b = a.child("patient");
+    var c = b.child(searchcasenumbertext);
+    c.on("value",snap =>{
+      x = snap.child("imageUrl").val();
+      if(x == null){
+        document.getElementById("imageupload").style.display = "block";
+      }else{
+        document.getElementById("viewimg").style.display = "block";
+        document.getElementById("editimage").style.display = "block";
+      }
+      });
 
     var searchRef = firebase.database().ref();
     var dataRef = searchRef.child("patient");
@@ -457,5 +545,4 @@ document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
   editbtn = document.getElementById("editingbtn").disabled = true;
   deletebtn = document.getElementById("deletingbtn").disabled = true;
   addbtn = document.getElementById("addbtn").disabled = false;
-  document.getElementById("linktocam").disabled = true;
 }
