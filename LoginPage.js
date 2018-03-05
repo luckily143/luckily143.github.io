@@ -15,7 +15,6 @@ var status = "login";
 var a = firebase.database().ref();
 var b = a.child("Status");
 b.on("value",snap =>{
-
   var stats= snap.child("status").val();
   if(stats==status){
       window.location = "HomePage.html";
@@ -98,7 +97,6 @@ if(usernameval == user && passwordval == passwords){
   var bases = firebase.database().ref();
   var newbase = bases.child("Status");
     newbase.child("status").set("login");
-    location.reload();
 }else{
 
   document.getElementById("usern").value="";
