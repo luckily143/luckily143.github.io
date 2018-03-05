@@ -14,18 +14,19 @@ var mname = document.getElementById('mname');
 var contactnumber = document.getElementById('contactnumber');
 var prioritynumber = document.getElementById('prioritynumber');
 
+window.onLoad(){
+  var statiss = "logout";
 
-var status = "logout";
+  var a = firebase.database().ref();
+  var b = a.child("Status");
+  b.on("value",snap =>{
+    var stats= snap.child("status").val();
+    if(statiss==stats){
+        window.location = "LoginPage.html";
+    }
+  });
 
-var a = firebase.database().ref();
-var b = a.child("Status");
-b.on("value",snap =>{
-
-  var stats= snap.child("status").val();
-  if(stats==status){
-      window.location = "LoginPage.html";
-  }
-});
+}
 
 
 
