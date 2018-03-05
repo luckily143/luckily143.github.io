@@ -14,7 +14,7 @@ var mname = document.getElementById('mname');
 var contactnumber = document.getElementById('contactnumber');
 var prioritynumber = document.getElementById('prioritynumber');
 
-window.onLoad(){
+
   var statiss = "logout";
 
   var a = firebase.database().ref();
@@ -26,7 +26,7 @@ window.onLoad(){
     }
   });
 
-}
+
 
 
 
