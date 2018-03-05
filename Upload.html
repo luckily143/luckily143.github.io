@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Images</title>
+    <link rel="icon" type="jpg" href="15.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-indigo.min.css" />
+	<link rel="stylesheet" href="Upload.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">VMPRES
+        <span class="page-title-span">|</span>
+        <span class="page-home-span"><a href="HomePage.html">HOME</a></span>
+      </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+      </nav>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+      <center>
+      <label id="imageupload" class="mdl-button mdl-js-button mdl-js-ripple-effect" onchange="browseClick()">
+      Browse File
+      <input type="file" id="chosenfile" class="chosenfile">
+    </label>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="imgbtn" onclick="uploadfile()">Upload File</button>
+    </center>
+    </div>
+  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDkyUa5jjMjdFcQqUXCbgFfCfvGf3SFV3g",
+      authDomain: "vmpress-930ea.firebaseapp.com",
+      databaseURL: "https://vmpress-930ea.firebaseio.com",
+      projectId: "vmpress-930ea",
+      storageBucket: "vmpress-930ea.appspot.com",
+      messagingSenderId: "184472814584"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="Upload.js"></script>
+
+</body>
+</html>

@@ -15,13 +15,33 @@ var contactnumber = document.getElementById('contactnumber');
 var prioritynumber = document.getElementById('prioritynumber');
 
 
+var status = "logout";
+
+var a = firebase.database().ref();
+var b = a.child("Status");
+b.on("value",snap =>{
+
+  var stats= snap.child("status").val();
+  if(stats==status){
+      window.location = "LoginPage.html";
+  }
+});
+
+
+
+
 var today = new Date();
 var tt = today.getDay();
 var dd = today.getDate();
 var mm = today.getMonth()+1;
 var yyyy = today.getFullYear();
 
-
+function logout(){
+  var bases = firebase.database().ref();
+  var newbase = bases.child("Status");
+    newbase.child("status").set("logout");
+    window.location = "LoginPage.html";
+}
 var todmon;
 
 if(mm == 1){

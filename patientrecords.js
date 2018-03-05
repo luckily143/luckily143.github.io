@@ -47,6 +47,7 @@ selectedfile = event.target.files[0];
 
 }
 
+
 ///imagecodes
   function uploadfile(){
   document.getElementById("imageupload").style.display = "none";
@@ -88,13 +89,16 @@ selectedfile = event.target.files[0];
         firebaseRef.child("imagename").set(filename);
         document.getElementById("imgbtn").style.display = "none";
         document.getElementById("imageupload").style.display = "none";
+        clearClick();
         location.reload();
     });
 
   }
 
       function viewimage() {
+
         window.location.assign(x);
+        clearClick();
       }
       function editimage() {
           document.getElementById("imageupload").style.display = "block";
@@ -199,7 +203,10 @@ rootRef.on("child_added",snap =>{
             addbtn = document.getElementById("addbtn").disabled = true;
             rIndex = this.rowIndex;
             document.getElementById("searchcasenumber").value = this.cells[0].innerHTML;
-
+            document.getElementById("imageupload").style.display = "none";
+            document.getElementById("imgbtn").style.display = "none";
+            document.getElementById("viewimg").style.display = "none";
+            document.getElementById("editimage").style.display = "none";
 
 
              searcfunction();

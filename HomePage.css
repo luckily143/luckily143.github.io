@@ -6,7 +6,12 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-
+#Logout{
+  color: white;
+}
+#pr{
+  color: white;
+}
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -15,7 +20,7 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #none;
-} 
+}
 .tbody{
   cursor: pointer;
 }
