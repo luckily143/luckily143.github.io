@@ -95,10 +95,10 @@ function clickLogin(){
   var usernameval = username.value;
   var passwordval = password.value;
 if(usernameval == user && passwordval == passwords){
-  window.location = "HomePage.html";
   var bases = firebase.database().ref();
   var newbase = bases.child("Status");
     newbase.child("status").set("login");
+    location.reload();
 }else{
 
   document.getElementById("usern").value="";
