@@ -1,0 +1,20 @@
+.page-content{
+  text-align: center;
+}
+#imageupload{
+  margin-top: 50px;
+  width: 95.8px;
+  height: 40px;
+  text-align: left;
+  background-color: #8b9dc3;
+}
+.chosenfile{
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  z-index: -2;
+}
+#imgbtn{
+  margin-top: 50px;
+  background-color: #8b9dc3;
+}
