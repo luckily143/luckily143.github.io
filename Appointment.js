@@ -317,32 +317,40 @@ location.reload();
 }
 
 
+
 //delete part
 function deleteClick(){
-
-  var prioritynumbertext = prioritynumber.value;
-
-  var bb = firebase.database().ref();
-    var nn = bb.child("appointments");
-  var nbn = nn.child(month+day+prioritynumbertext).remove();
-
-
-  var desertRef = firebase.database().ref();
-  var n = desertRef.child("appointment");
-  var landRef = n.child(month);
-  var dayst = landRef.child(day);
-  var newRef = dayst.child(prioritynumbertext).remove();
-
-document.getElementById("prioritynumber").value="";
-document.getElementById("lname").value="";
-document.getElementById("gname").value="";
-document.getElementById("mname").value="";
-document.getElementById("contactnumber").value="";
-
-
-document.getElementById("prioritynumber").disabled = false;
-location.reload();
+  document.getElementById("myModal").style.display = "block";
 }
+
+function noop(){
+  document.getElementById("myModal").style.display = "none";
+}
+function yesop(){
+    var prioritynumbertext = prioritynumber.value;
+
+    var bb = firebase.database().ref();
+      var nn = bb.child("appointments");
+    var nbn = nn.child(month+day+prioritynumbertext).remove();
+
+
+    var desertRef = firebase.database().ref();
+    var n = desertRef.child("appointment");
+    var landRef = n.child(month);
+    var dayst = landRef.child(day);
+    var newRef = dayst.child(prioritynumbertext).remove();
+
+  document.getElementById("prioritynumber").value="";
+  document.getElementById("lname").value="";
+  document.getElementById("gname").value="";
+  document.getElementById("mname").value="";
+  document.getElementById("contactnumber").value="";
+
+
+  document.getElementById("prioritynumber").disabled = false;
+  location.reload();
+}
+
 
 function clearClick(){
 

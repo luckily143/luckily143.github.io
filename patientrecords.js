@@ -457,6 +457,12 @@ function searcfunction(){
 
 //Delete records
 function deleteClick(){
+document.getElementById("myModal").style.display = "block";
+}
+function noop(){
+  document.getElementById("myModal").style.display = "none";
+}
+function yesop(){
 
   var idtext = id.value;
   var desertRef = firebase.database().ref();
@@ -466,10 +472,6 @@ function deleteClick(){
 clearClick();
 location.reload();
 }
-
-
-
-
 
 //Edit Codes
 function editClick(){

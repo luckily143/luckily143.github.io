@@ -55,7 +55,20 @@ tr:nth-child(even) {
   </header>
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
 
+				<!-- Modal content -->
+				<div class="modal-content">
+					<h5>Are you sure you want to delete this patient?</h5>
+					<br></br>
+					<div align="right">
+					<button id="yesbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="yesop()">Yes</button>
+					<button id="nobtn" class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="noop()">No</button>
+					</div>
+				</div>
+
+			</div>
 <input class="searchcasenumber" id="searchcasenumber" type="text" name="searchcasenumber" placeholder="Enter Case Number"><input id="searchbtn" class="searchbtn" onclick="searchClick()" type="submit" name="searchbtn" value="Search">
 
 <div class="row">
