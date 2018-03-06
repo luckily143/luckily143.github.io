@@ -80,15 +80,15 @@ tr:nth-child(even) {
 							<th colspan="3">Appointments</th>
 						</tr>
 						<tr>
-							<td>Priority Number :<br> <input id="prioritynumber" type="text" placeholder="Enter Priority Number" name="prioritynumber"></td>
+							<td>Priority Number :<br> <input id="prioritynumber" type="text" placeholder="Enter Priority Number" name="prioritynumber" maxlength="2"></td>
 						</tr>
 
 					<tr>
-					<td>Last Name :<br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname"></td><td>Given Name :<br><input id="gname"type="text" placeholder="Enter Given Name" name="gname"></td><td>Middle Name :<br><input id="mname"type="text" placeholder="Enter Middle Name" name="mname"></td>
+					<td>Last Name :<br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname" maxlength="20"></td><td>First Name :<br><input id="gname"type="text" placeholder="Enter Given Name" name="gname" maxlength="20"></td><td>Middle Initial :<br><input id="mname"type="text" placeholder="Enter Middle Name" name="mname" maxlength="5"></td>
 					</tr>
 
 				<tr>
-				<td>Contact Number :<br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber"></td></td>
+				<td>Contact Number :<br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber" maxlength="20"></td></td>
 				</tr>
 							<tr>
 						<td class="addbtn"><input id="addbtn" onclick="submitClick()" type="submit" name="addbtn" value="ADD"></td>

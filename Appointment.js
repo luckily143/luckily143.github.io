@@ -118,6 +118,8 @@ if(month == 5){
 
   function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
+
+    
     table = document.getElementById("records");
     switching = true;
     /*Make a loop that will continue until
