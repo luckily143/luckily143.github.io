@@ -74,3 +74,35 @@ body {font-family: Arial, Helvetica, sans-serif;}
     border: 1px solid #888;
     width: 50%;
 }
+#addeds {
+  padding-top: 10px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+#deleteds {
+  padding-top: 10px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+#editeds {
+  padding-top: 10px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+#existed {
+  padding-top: 10px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}

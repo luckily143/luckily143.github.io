@@ -25,6 +25,22 @@ var tod = localStorage.tod;
 var m;
 
 
+function okopedited(){
+  document.getElementById("edited").style.display = "none";
+  location.reload();
+}
+function okopdeleted(){
+  document.getElementById("deleted").style.display = "none";
+  location.reload();
+}
+function okopadded(){
+  document.getElementById("added").style.display = "none";
+  location.reload();
+}
+function okopalready(){
+  document.getElementById("already").style.display = "none";
+}
+
 if(month == 1){
   todmon = "January";
     m = "Jan";
@@ -119,7 +135,7 @@ if(month == 5){
   function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
 
-    
+
     table = document.getElementById("records");
     switching = true;
     /*Make a loop that will continue until
@@ -183,7 +199,7 @@ function submitClick(){
       document.getElementById("gname").value="";
       document.getElementById("mname").value="";
        document.getElementById("contactnumber").value="";
-      alert("Priority Number Already Existed");
+      document.getElementById("already").style.display = "block";
     }else{
 
           var bb = firebase.database().ref();
@@ -218,9 +234,8 @@ function submitClick(){
     document.getElementById("mname").value="";
      document.getElementById("contactnumber").value="";
 
-    location.reload();
 
-    alert("Successfully Added");
+    document.getElementById("added").style.display = "block";
     }
 
 
@@ -314,8 +329,7 @@ document.getElementById("contactnumber").value="";
 
 document.getElementById("prioritynumber").disabled = false;
 
-alert("Successfully Edited Records");
-location.reload();
+document.getElementById("edited").style.display = "none";
 }
 
 
@@ -349,8 +363,7 @@ function yesop(){
   document.getElementById("contactnumber").value="";
 
 
-  document.getElementById("prioritynumber").disabled = false;
-  location.reload();
+document.getElementById("deleted").style.display = "none";
 }
 
 

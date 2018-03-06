@@ -347,9 +347,8 @@ function submitClick(){
     document.getElementById("weight").value="";
     document.getElementById("temperature").value="";
     document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
-    location.reload();
 
-    alert("Successfully Added");
+    document.getElementById("added").style.display = "block";
   }else{
       document.getElementById("id").value="";
     document.getElementById("lname").value="";
@@ -366,7 +365,7 @@ function submitClick(){
     document.getElementById("weight").value="";
     document.getElementById("temperature").value="";
     document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
-          alert("Patient Already Exist");
+          document.getElementById("already").style.display = "block";
     }
 
 }
@@ -473,9 +472,9 @@ function yesop(){
   var desertRef = firebase.database().ref();
   var landRef = desertRef.child("patient");
   var newRef = landRef.child(idtext).remove();
-
+document.getElementById("deleted").style.display = "block";
+document.getElementById("myModal").style.display = "none";
 clearClick();
-location.reload();
 }
 
 //Edit Codes
@@ -527,17 +526,26 @@ var firebaseRef = newbase.child(idtext);
   firebaseRef.child("temperature").set(temperaturetext);
   firebaseRef.child("dr").set(drtext);
 
-
-
-
 clearClick();
-
-alert("Successfully Edited Records");
-location.reload();
+document.getElementById("edited").style.display = "block";
 }
 
 
-
+function okopedited(){
+  document.getElementById("edited").style.display = "none";
+  location.reload();
+}
+function okopdeleted(){
+  document.getElementById("deleted").style.display = "none";
+  location.reload();
+}
+function okopadded(){
+  document.getElementById("added").style.display = "none";
+  location.reload();
+}
+function okopalready(){
+  document.getElementById("already").style.display = "none";
+}
 
 //clearing alll textfields
 function clearClick(){
