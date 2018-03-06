@@ -187,7 +187,7 @@ rootRef.on("child_added",snap =>{
     cell6.setAttribute('style', 'text-align: center;');
     cell7.setAttribute('style', 'text-align: center;');
 
-    sortTable();
+
 
 
     var  rIndex, table = document.getElementById("records");
