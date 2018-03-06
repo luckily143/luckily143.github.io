@@ -14,6 +14,11 @@ var mname = document.getElementById('mname');
 var contactnumber = document.getElementById('contactnumber');
 var prioritynumber = document.getElementById('prioritynumber');
 
+var today = new Date();
+var tt = today.getDay();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
 
   var statiss = "logout";
 
@@ -29,20 +34,13 @@ var prioritynumber = document.getElementById('prioritynumber');
 
 
 
-
-
-var today = new Date();
-var tt = today.getDay();
-var dd = today.getDate();
-var mm = today.getMonth()+1;
-var yyyy = today.getFullYear();
-
 function logout(){
   var bases = firebase.database().ref();
   var newbase = bases.child("Status");
     newbase.child("status").set("logout");
     window.location = "LoginPage.html";
 }
+
 var todmon;
 
 if(mm == 1){
@@ -65,12 +63,12 @@ if(mm == 5){
 document.getElementById("today").innerHTML = todmon +" "+ dd + ", "+ yyyy;
 
 var newRef = firebase.database().ref();
-  var a = newRef.child("appointment");
+var a = newRef.child("appointment");
 var rootRef = a.child(mm);
-var dayfb = rootRef.child(dd);
+var dayfb = rootRef.child("0"+dd);
 dayfb.on("child_added",snap =>{
 
-
+  var prioritynumber= snap.child("prioritynumber").val();
   var lname= snap.child("lname").val();
   var gname= snap.child("gname").val();
   var mname= snap.child("mname").val();

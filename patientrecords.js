@@ -35,8 +35,8 @@ var imgbtn = document.getElementById("imgbtn");
 var browse = document.getElementById('imageupload');
 document.getElementById("imgbtn").style.display = "none";
 document.getElementById("imageupload").style.display = "none";
-document.getElementById("viewimg").style.display = "none";
 document.getElementById("editimage").style.display = "none";
+document.getElementById("viewingimage").style.display = "none";
 
 
 function browseClick(){
@@ -89,6 +89,7 @@ selectedfile = event.target.files[0];
         firebaseRef.child("imagename").set(filename);
         document.getElementById("imgbtn").style.display = "none";
         document.getElementById("imageupload").style.display = "none";
+        document.getElementById("viewingimage").style.display = "none";
         clearClick();
         location.reload();
     });
@@ -100,10 +101,10 @@ selectedfile = event.target.files[0];
         window.location.assign(x);
         clearClick();
       }
+
       function editimage() {
           document.getElementById("imageupload").style.display = "block";
           document.getElementById("imgbtn").style.display = "none";
-          document.getElementById("viewimg").style.display = "none";
           document.getElementById("editimage").style.display = "none";
       }
 
@@ -205,7 +206,6 @@ rootRef.on("child_added",snap =>{
             document.getElementById("searchcasenumber").value = this.cells[0].innerHTML;
             document.getElementById("imageupload").style.display = "none";
             document.getElementById("imgbtn").style.display = "none";
-            document.getElementById("viewimg").style.display = "none";
             document.getElementById("editimage").style.display = "none";
 
 
@@ -383,11 +383,16 @@ function searcfunction(){
     var c = b.child(searchcasenumbertext);
     c.on("value",snap =>{
       x = snap.child("imageUrl").val();
-      if(x == null){
+      var z = "";
+      if(x == z){
         document.getElementById("imageupload").style.display = "block";
-      }else{
+        document.getElementById("imgbtn").style.display = "none";
+        document.getElementById("editimage").style.display = "none";
+        document.getElementById("viewingimage").style.display = "none";
+      }if(x != z){
+        document.getElementById("viewingimage").src = x;
+        document.getElementById("viewingimage").style.display = "block";
         document.getElementById("imageupload").style.display = "none";
-        document.getElementById("viewimg").style.display = "block";
         document.getElementById("editimage").style.display = "block";
       }
       });
@@ -479,7 +484,6 @@ var idtext = id.value;
 var lnametext = lname.value;
 var fnametext = fname.value;
 var mnametext = mname.value;
-
 var gendertext = gender.value;
 var contactnumbertext = contactnumber.value;
 var bdaytext = bday.value;
@@ -490,6 +494,8 @@ var weighttext = weight.value;
 var heightcmtext = heightcm.value;
 var temperaturetext = temperature.value;
 var drtext = dr.value;
+
+
 
 var d1 = new Date(); //"now"
 var d2 = new Date(bdaytext)  // some date
@@ -557,6 +563,6 @@ document.getElementById("dr").value = dd +"/"+mm+"/"+yyyy;
 
   document.getElementById("imageupload").style.display = "none";
   document.getElementById("imgbtn").style.display = "none";
-  document.getElementById("viewimg").style.display = "none";
   document.getElementById("editimage").style.display = "none";
+  document.getElementById("viewingimage").style.display = "none";
 }

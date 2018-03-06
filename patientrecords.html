@@ -83,8 +83,9 @@ tr:nth-child(even) {
 					<td >Case Number :<br><input id="id" type="text" placeholder="Enter Case Number" name="id" maxlength="15"></td>
 					<td>
 					<br>
-
-					<button id="viewimg" onclick="viewimage()">View Image</button>
+					<center>
+					<img onclick="viewimage()" id="viewingimage" width="42" height="42">
+				</center>
 					</td>
 					<td>
 					<br>
@@ -97,13 +98,17 @@ tr:nth-child(even) {
 					</td>
 					</tr>
 					<tr>
-					<td>Last Name :<br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname" maxlength="20"></td><td>First Name :<br><input id="fname"type="text" placeholder="Enter First Name" name="fname" maxlength="20"></td><td>Middle Initial :<br><input id="mname"type="text" placeholder="Enter Middle Name" name="mname" maxlength="5"></td>
+					<td>Last Name :<br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname" maxlength="20"></td><td>First Name :<br><input id="fname"type="text" placeholder="Enter First Name" name="fname" maxlength="20"></td><td>Middle Initial :<br><input id="mname"type="text" placeholder="Enter Middle Initial" name="mname" maxlength="5"></td>
 					</tr>
 					<tr>
-					<td>Birthday: <input type="date" id="bday" name="bday"></td><td> Gender :<br><input type="radio" name="gender" id="gender" value="male" checked> Male<input type="radio" id="gender" name="gender" value="female"> Female</td><td>Age :<br><input id="age" type="number"  name="age" placeholder="Age Auto Computed"></td>
+					<td>Birthday: <input type="date" id="bday" name="bday"></td><td> Gender :<br>  <select id="gender">
+																																												    <option value="male">male</option>
+																																												    <option value="female">female</option>
+																																												  </select>
+																																													</td><td>Age :<br><input id="age" type="number"  name="age" placeholder="Age Auto Computed"></td>
 					</tr>
 				<tr>
-				<td>Contact Number :<br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber" maxlength="15"></td><td>Address :<br> <input id="address" type="text" placeholder="Enter Address" name="address"></td>
+				<td>Contact Number :<br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber" maxlength="15"></td><td colspan="2">Address :<br> <input id="address" type="text" placeholder="Enter Address" name="address"></td>
 				</tr>
 
 						<tr>

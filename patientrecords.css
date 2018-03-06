@@ -6,6 +6,12 @@ table tr:not(:first-child){
 width: 100px;
 }
 
+#mname{
+  width: 116px;
+}
+#address{
+  width: 370px;
+}
 .selected{ background-color: #ace; }
 .records tr:not(:first-child):hover{ background-color: #ffffff; }
 
@@ -32,12 +38,6 @@ width: 100px;
   z-index: -2;
 }
 #imgbtn{
-  align-items: center;
-  font-family: arial, sans-serif;
-  padding: 8px;
-  border: 1px solid #dddddd;
-}
-#viewimg{
   align-items: center;
   font-family: arial, sans-serif;
   padding: 8px;
