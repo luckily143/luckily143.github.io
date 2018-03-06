@@ -189,7 +189,7 @@ rootRef.on("child_added",snap =>{
 
 
 
-
+    sortTable();
     var  rIndex, table = document.getElementById("records");
     for(var i = 1; i < table.rows.length; i++)
     {

@@ -90,7 +90,7 @@ if(month == 5){
       cell4.setAttribute('style', 'text-align: center;');
       cell5.setAttribute('style', 'text-align: center;');
 
-
+      sortTable();
       //selectedindex lol
       var rIndex, table = document.getElementById("records");
       for(var i = 1; i < table.rows.length; i++)
