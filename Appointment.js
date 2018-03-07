@@ -330,7 +330,7 @@ document.getElementById("contactnumber").value="";
 
 document.getElementById("prioritynumber").disabled = false;
 
-document.getElementById("edited").style.display = "none";
+document.getElementById("edited").style.display = "block";
 }
 
 
@@ -363,8 +363,7 @@ function yesop(){
   document.getElementById("mname").value="";
   document.getElementById("contactnumber").value="";
 
-
-document.getElementById("deleted").style.display = "none";
+document.getElementById("deleted").style.display = "block";
 }
 
 
