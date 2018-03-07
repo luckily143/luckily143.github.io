@@ -330,6 +330,7 @@ function submitClick(){
         firebaseRef.child("note").set("");
         firebaseRef.child("imageUrl").set("");
         firebaseRef.child("imagename").set("");
+        firebaseRef.child("img").set("");
     //clearing textfields
 
       document.getElementById("id").value="";

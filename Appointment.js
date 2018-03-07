@@ -362,7 +362,7 @@ function yesop(){
   document.getElementById("gname").value="";
   document.getElementById("mname").value="";
   document.getElementById("contactnumber").value="";
-
+document.getElementById("myModal").style.display = "none";
 document.getElementById("deleted").style.display = "block";
 }
 
