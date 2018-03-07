@@ -39,6 +39,7 @@ function okopadded(){
 }
 function okopalready(){
   document.getElementById("already").style.display = "none";
+
 }
 
 if(month == 1){
