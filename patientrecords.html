@@ -134,7 +134,7 @@ tr:nth-child(even) {
 							<th colspan="3"><h4>Patient Records</h4></th>
 						</tr>
 					<tr>
-					<td >Case Number :<br><input id="id" type="text" placeholder="Enter Case Number" name="id" maxlength="15"></td>
+					<td ><b>Case Number :</b><br><input id="id" type="text" placeholder="Enter Case Number" name="id" maxlength="15"></td>
 					<td>
 					<br>
 					<center>
@@ -151,40 +151,42 @@ tr:nth-child(even) {
 					<button id="editimage" onclick="editimage()">Edit Image</button>
 					</td>
 					</tr>
+
 					<tr>
-					<td>Last Name :<br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname" maxlength="20"></td><td>First Name :<br><input id="fname"type="text" placeholder="Enter First Name" name="fname" maxlength="20"></td><td>Middle Initial :<br><input id="mname"type="text" placeholder="Enter Middle Initial" name="mname" maxlength="5"></td>
+					<td><b>Last Name :</br> <input id="lname" type="text" placeholder="Enter Last Name" name="lname" maxlength="20"></td><td><b>First Name :</b><br><input id="fname"type="text" placeholder="Enter First Name" name="fname" maxlength="20"></td><td><b>Middle Initial :</b><br><input id="mname"type="text" placeholder="Enter Middle Initial" name="mname" maxlength="5"></td>
 					</tr>
 					<tr>
-					<td>Birthday: <input type="date" id="bday" name="bday"></td><td> Gender :<br>  <select id="gender">
+					<td><b>Birthday: </b><input type="date" id="bday" name="bday"></td><td> Gender :<br>  <select id="gender">
 																																												    <option value="male">male</option>
 																																												    <option value="female">female</option>
 																																												  </select>
 																																													</td><td>Age :<br><input id="age" type="number"  name="age" placeholder="Age Auto Computed"></td>
 					</tr>
 				<tr>
-				<td>Contact Number :<br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber" maxlength="15"></td><td colspan="2">Address :<br> <input id="address" type="text" placeholder="Enter Address" name="address"></td>
+				<td><b>Contact Number :</b><br><input id="contactnumber" type="text" placeholder="Enter Contact Number" name="contactnumber" maxlength="15"></td><td colspan="2"><b>Address :</b><br> <input id="address" type="text" placeholder="Enter Address" name="address"></td>
 				</tr>
 
 						<tr>
-						<td>Father's Name :<br><input id="fathername"type="text" placeholder="Enter Father's Name" name="fathername" maxlength="20"></td><td>Mother's Name :<br><input id="mothername"type="text" placeholder="Enter Mother's Name" name="mothername" maxlength="20"></td>
+						<td><b>Father's Name :</b><br><input id="fathername"type="text" placeholder="Enter Father's Name" name="fathername" maxlength="20"></td><td><b>Mother's Name :</b><br><input id="mothername"type="text" placeholder="Enter Mother's Name" name="mothername" maxlength="20"></td>
 						</tr>
 						<tr>
-						<td>Height(cm) :<br> <input id="heightcm" type="text" placeholder="Enter Height in cm" name="heightcm" maxlength="3"></td>
+						<td><b>Height(cm) :</b><br> <input id="heightcm" type="text" placeholder="Enter Height in cm" name="heightcm" maxlength="3"></td>
 					</tr>
 						<tr>
-						<td>Weight(kg) :<br><input id="weight"type="text" placeholder="Enter Weight in kg" name="weight" maxlength="3"></td>
+						<td><b>Weight(kg) :</b><br><input id="weight"type="text" placeholder="Enter Weight in kg" name="weight" maxlength="3"></td>
 						</tr>
 						<tr>
-						<td>Temperature(Celsius) :<br><input id="temperature"type="text" placeholder="Enter Temperature in Celsius" name="temperature" maxlength="2"></td>
+						<td><b>Temperature(Celsius)</b><br><input id="temperature"type="text" placeholder="Enter Temperature in Celsius" name="temperature" maxlength="2"></td>
 						</tr>
 						<tr>
-							<td>Date Registered: <input type="text" id="dr" name="dr"></td>
+							<td><b>Date Registered: </><input type="text" id="dr" name="dr"></td>
 							<tr>
 						<td class="addbtn"><input id="addbtn" onclick="submitClick()" type="submit" name="addbtn" value="ADD PATIENT"></td>
 						<td class="editingbtn"><input type="submit" id="editingbtn" onclick="editClick()" name="editbtn" value="EDIT"></td>
 						<td class="deletingbtn"><input type="submit" id="deletingbtn" onclick="deleteClick()" name="deletebtn" value="DELETE"></td>
 						<td class="clear"><input id="clear" onclick="clearClick()" type="submit" name="clear" value="CLEAR"></td>
 					</tr>
+
 					</table>
 
 

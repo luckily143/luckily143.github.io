@@ -20,9 +20,6 @@ width: 100px;
   display: none;
   cursor: pointer;transition: all .25s ease-in-out;
 }
-.add{
-  font-weight: bold;
-}
 
 
 #imageupload{
