@@ -12,6 +12,21 @@ var fpm = document.getElementById('fpm');
 
 
 
+function okopedited(){
+  document.getElementById("edited").style.display = "none";
+  location.reload();
+}
+function okopdeleted(){
+  document.getElementById("deleted").style.display = "none";
+  location.reload();
+}
+function okopadded(){
+  document.getElementById("added").style.display = "none";
+  location.reload();
+}
+function okopalready(){
+  document.getElementById("already").style.display = "none";
+}
 
 document.getElementById("fpm").style.display = "none";
 
@@ -43,8 +58,7 @@ function clickSave(){
 
 
 if(currentpval !== passwords){
-  alert("Currentpassword is wrong");
-
+  document.getElementById("deleted").style.display = "block";
   document.getElementById("currentpass").value="";
   document.getElementById("newp").value="";
   document.getElementById("confirmp").value="";
@@ -64,14 +78,16 @@ if(currentpval !== passwords){
         document.getElementById("loginfrm").style.display = "block";
         document.getElementById("chpfrm").style.display = "none";
     }else{
-      alert("Passwords didnt match");
+
+
       document.getElementById("currentpass").value="";
       document.getElementById("newp").value="";
       document.getElementById("confirmp").value="";
+      document.getElementById("added").style.display = "block";
     }
 
   }else{
-    alert("Please enter some datas");
+    document.getElementById("edited").style.display = "block";
   }
 }
 
@@ -90,7 +106,7 @@ window.location = "HomePage.html";
 
   document.getElementById("usern").value="";
   document.getElementById("passw").value="";
-    alert("Wrong Username or Password");
+    document.getElementById("already").style.display = "block";
 }
 
 
