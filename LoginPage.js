@@ -14,18 +14,21 @@ var fpm = document.getElementById('fpm');
 
 function okopedited(){
   document.getElementById("edited").style.display = "none";
-  location.reload();
+  document.getElementsByClassName('login-page').style.display = "block";
 }
 function okopdeleted(){
   document.getElementById("deleted").style.display = "none";
-  location.reload();
+  document.getElementsByClassName('login-page').style.display = "block";
+
 }
 function okopadded(){
   document.getElementById("added").style.display = "none";
-  location.reload();
+  document.getElementsByClassName('login-page').style.display = "block";
+
 }
 function okopalready(){
   document.getElementById("already").style.display = "none";
+  document.getElementsByClassName('login-page').style.display = "block";
 }
 
 document.getElementById("fpm").style.display = "none";
@@ -58,11 +61,12 @@ function clickSave(){
 
 
 if(currentpval !== passwords){
-  document.getElementById("deleted").style.display = "block";
+
   document.getElementById("currentpass").value="";
   document.getElementById("newp").value="";
   document.getElementById("confirmp").value="";
-
+  document.getElementsByClassName('login-page').style.display = "none";
+  document.getElementById("deleted").style.display = "block";
 }else{
   if(newpval !== "" && confirmpval !== ""){
 
@@ -78,11 +82,10 @@ if(currentpval !== passwords){
         document.getElementById("loginfrm").style.display = "block";
         document.getElementById("chpfrm").style.display = "none";
     }else{
-
-
       document.getElementById("currentpass").value="";
       document.getElementById("newp").value="";
       document.getElementById("confirmp").value="";
+      document.getElementsByClassName('login-page').style.display = "none";
       document.getElementById("added").style.display = "block";
     }
 
@@ -106,6 +109,7 @@ window.location = "HomePage.html";
 
   document.getElementById("usern").value="";
   document.getElementById("passw").value="";
+  document.getElementsByClassName('login-page').style.display = "none";
     document.getElementById("already").style.display = "block";
 }
 
