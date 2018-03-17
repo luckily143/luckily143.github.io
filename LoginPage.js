@@ -10,16 +10,7 @@ var btnfp = document.getElementById('fpbtn');
 var fpm = document.getElementById('fpm');
 
 
-var status = "login";
 
-var a = firebase.database().ref();
-var b = a.child("Status");
-b.on("value",snap =>{
-  var stats= snap.child("status").val();
-  if(stats==status){
-      window.location = "HomePage.html";
-  }
-});
 
 
 document.getElementById("fpm").style.display = "none";
@@ -94,9 +85,7 @@ function clickLogin(){
   var usernameval = username.value;
   var passwordval = password.value;
 if(usernameval == user && passwordval == passwords){
-  var bases = firebase.database().ref();
-  var newbase = bases.child("Status");
-    newbase.child("status").set("login");
+window.location = "HomePage.html";
 }else{
 
   document.getElementById("usern").value="";

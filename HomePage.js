@@ -20,26 +20,8 @@ var dd = today.getDate();
 var mm = today.getMonth()+1;
 var yyyy = today.getFullYear();
 
-  var statiss = "logout";
-
-  var a = firebase.database().ref();
-  var b = a.child("Status");
-  b.on("value",snap =>{
-    var stats= snap.child("status").val();
-    if(statiss==stats){
-        window.location = "LoginPage.html";
-    }
-  });
 
 
-
-
-function logout(){
-  var bases = firebase.database().ref();
-  var newbase = bases.child("Status");
-    newbase.child("status").set("logout");
-    window.location = "LoginPage.html";
-}
 
 var todmon;
 var x;
