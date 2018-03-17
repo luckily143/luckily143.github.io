@@ -17,6 +17,7 @@ var editbtn = document.getElementById("editingbtn");
 var deletebtn = document.getElementById("deletingbtn");
 var searchbtn = document.getElementById('searchbtn');
 var searchcasenumber = document.getElementById('searchcasenumber');
+var searchlastname = document.getElementById('searchlastname');
 var output = document.getElementById('output');
 var weight = document.getElementById("weight");
 var heightcm = document.getElementById("heightcm");
@@ -375,7 +376,7 @@ function submitClick(){
 //Retrieve . function as Search .. Value to put in textfields...
 searchbtn.addEventListener('click', searcfunction);
 function searcfunction(){
-
+    searchlastname.value = null;
     var searchcasenumbertext = searchcasenumber.value;
 
     var a = firebase.database().ref();
@@ -458,7 +459,24 @@ function searcfunction(){
 
 }
 
+function searchlnameClick(){
 
+    var searchlastnametext = searchlastname.value;
+
+
+
+      var searchRef = firebase.database().ref();
+      var dataRef = searchRef.child('patient').orderByChild('lname').equalTo(searchlastnametext).on("value", function(snapshot) {
+
+          console.log(snapshot.val());
+          snapshot.forEach(function(data) {
+              var x = data.key;
+              searchcasenumber.value = x;
+              searcfunction();
+          });
+      });
+
+}
 
 //Delete records
 function deleteClick(){
