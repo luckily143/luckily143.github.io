@@ -42,21 +42,47 @@ function logout(){
 }
 
 var todmon;
-
+var x;
 if(mm == 1){
   todmon = "January";
+  if(dd < 10){
+    x = "0" + dd;
+  }else{
+    x = dd;
+  }
+
 }
 if(mm == 2){
   todmon = "February";
+  if(dd < 10){
+    x = "0" + dd;
+  }else{
+    x = dd;
+  }
 }
 if(mm == 3){
   todmon = "March";
+  if(dd < 10){
+    x = "0" + dd;
+  }else{
+    x = dd;
+  }
 }
 if(mm == 4){
   todmon = "April";
+  if(dd < 10){
+    x = "0" + dd;
+  }else{
+    x = dd;
+  }
 }
 if(mm == 5){
   todmon = "May";
+  if(dd < 10){
+    x = "0" + dd;
+  }else{
+    x = dd;
+  }
 }
 
 
@@ -65,7 +91,7 @@ document.getElementById("today").innerHTML = todmon +" "+ dd + ", "+ yyyy;
 var newRef = firebase.database().ref();
 var a = newRef.child("appointment");
 var rootRef = a.child(mm);
-var dayfb = rootRef.child("0"+dd);
+var dayfb = rootRef.child(x);
 dayfb.on("child_added",snap =>{
 
   var prioritynumber= snap.child("prioritynumber").val();
